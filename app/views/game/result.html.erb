@@ -1,0 +1,28 @@
+<% 
+  @document_title = 'ゲーム結果'
+  hand_names = %w(rock.png scissors.png paper.png)
+  alt_text = %w(グー チョキ パー)
+%>
+<p>あなたの手は…</p>
+<div>
+    <%= image_tag(hand_names[@player_hand],
+    :size => "100x100", :alt => alt_text[@player_hand])%>
+</div>
+<br/><br/>
+<p>コンピュータの手は…</p>
+<div>
+    <%= image_tag(hand_names[@computer_hand],
+    :size => "100x100", :alt => alt_text[@computer_hand])%>
+</div>
+<h2>
+    <%= 
+       case @result
+       when 'aiko'
+       'あいこです'
+       when 'win'
+       '勝ちです'
+       when 'lose'
+       '負けです'
+       end%>
+</h2>
+  

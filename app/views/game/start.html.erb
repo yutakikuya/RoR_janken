@@ -1,0 +1,12 @@
+<%  
+  @document_title = 'ゲーム開始'
+  hand_names = ['rock.png', 'scissors.png', 'paper.png']
+  alt_text = %w(グー チョキ パー)
+%>
+<p>あなたの手をえらんでください</p>
+<div>
+    <% 0.upto(2) do |index| %>
+    <%= link_to(image_tag(hand_names[index],
+     :size => "100x100", :alt => alt_text[index]), game_result_path(:hand => index)) %>
+    <% end %>
+</div>
